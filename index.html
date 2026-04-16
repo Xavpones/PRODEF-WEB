@@ -3,45 +3,620 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PRODEF | Aquí comienza tu camino</title>
-
+  <title>PRODEF | Formación Profesional de Fútbol</title>
+  <meta name="description" content="Proyecto de Desarrollo Futbolístico. Formación integral, metodología oficial y entrenamientos estructurados en Ciudad López Mateos.">
+  <meta property="og:title" content="PRODEF | Inscripciones Abiertas">
+  <meta property="og:description" content="No buscamos jugadores que solo jueguen, buscamos jugadores que entiendan el juego.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-  <nav>
-    <h1>PRODEF</h1>
-    <button onclick="goTo('inicio')">Inicio</button>
-    <button onclick="goTo('metodologia')">Metodología</button>
-    <button onclick="goTo('galeria')">Galería</button>
-    <button onclick="goTo('portal')">Portal</button>
+  <!-- ── GRAIN OVERLAY ─────────────────────── -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ── WHATSAPP ──────────────────────────── -->
+  <a href="https://wa.me/525653764517" class="float-wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- ── NAV ───────────────────────────────── -->
+  <nav class="nav" role="navigation" aria-label="Navegación principal">
+    <div class="nav-logo" onclick="show('inicio')" role="button" tabindex="0" aria-label="Inicio">
+      <img src="assets/logo.png" alt="PRODEF">
+      <span>PRODEF</span>
+    </div>
+
+    <button class="hamburger" id="hamburger" onclick="toggleNav()"
+      aria-label="Menú" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav-links" id="nav-links" role="menubar">
+      <button class="nav-btn" id="nb-inicio"      onclick="show('inicio')"      role="menuitem" aria-current="page">Inicio</button>
+      <button class="nav-btn" id="nb-metodologia" onclick="show('metodologia')" role="menuitem">Metodología</button>
+      <button class="nav-btn" id="nb-entrenador"  onclick="show('entrenador')"  role="menuitem">Entrenador</button>
+      <button class="nav-btn" id="nb-precios"     onclick="show('precios')"     role="menuitem">Inscripción</button>
+      <button class="nav-btn" id="nb-galeria"     onclick="show('galeria')"     role="menuitem">Galería</button>
+      <button class="nav-btn" id="nb-ubicaciones" onclick="show('ubicaciones')" role="menuitem">Sedes</button>
+      <button class="nav-btn nav-portal" id="nb-portal" onclick="show('portal')" role="menuitem">
+        <i class="fas fa-lock"></i><span>Portal</span>
+      </button>
+    </div>
   </nav>
 
-  <!-- INICIO -->
-  <section id="inicio">
-    <h2>AQUÍ COMIENZA TU CAMINO</h2>
-    <p>Formamos jugadores que entienden el juego</p>
-  </section>
+  <!-- ════════════════════════════════════════
+       INICIO — HERO
+  ════════════════════════════════════════ -->
+  <div id="inicio" class="page active" role="main">
 
-  <!-- METODOLOGÍA -->
-  <section id="metodologia">
-    <h2>Metodología PRODEF</h2>
-    <p>Formación integral: técnica, táctica y valores.</p>
-  </section>
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
 
-  <!-- GALERÍA -->
-  <section id="galeria">
-    <h2>Galería</h2>
-    <img src="assets/galeria/foto1.jpg" width="200">
-  </section>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-kicker">
+            <span class="kicker-dot"></span>
+            Academia de Fútbol · Ciudad López Mateos
+          </div>
 
-  <!-- PORTAL -->
-  <section id="portal">
-    <h2>Portal PRODEF</h2>
-    <p>Acceso para padres y jugadores</p>
-  </section>
+          <h1 class="hero-title">
+            Formamos<br>
+            <em>jugadores</em><br>
+            que entienden<br>
+            el juego.
+          </h1>
 
-  <script src="app.js"></script>
+          <p class="hero-sub">
+            Disciplina real. Inteligencia táctica.<br>
+            Desarrollo medible.
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://wa.me/525653764517" target="_blank" rel="noopener" class="btn btn-primary">
+              <i class="fab fa-whatsapp"></i> Inscribirme
+            </a>
+            <button class="btn btn-ghost" onclick="show('metodologia')">
+              Metodología <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-metrics" role="list" aria-label="Métricas">
+          <div class="hero-metric" role="listitem">
+            <strong>+3</strong>
+            <span>Años formando</span>
+          </div>
+          <div class="hero-metric" role="listitem">
+            <strong>FMF</strong>
+            <span>Certificación</span>
+          </div>
+          <div class="hero-metric" role="listitem">
+            <strong>2</strong>
+            <span>Sedes activas</span>
+          </div>
+          <div class="hero-metric" role="listitem">
+            <strong>3</strong>
+            <span>Pilares de desarrollo</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ════════════════════════════════════════
+       METODOLOGÍA
+  ════════════════════════════════════════ -->
+  <div id="metodologia" class="page" role="main">
+    <section class="section">
+
+      <header class="section-header">
+        <p class="section-kicker">Nuestro sistema</p>
+        <h2 class="section-title">Metodología</h2>
+        <p class="section-sub">
+          Cada sesión está diseñada para que el jugador no solo ejecute — que entienda.
+        </p>
+      </header>
+
+      <div class="pillars-grid">
+        <div class="pillar-card reveal">
+          <div class="pillar-index">01</div>
+          <h3>Técnica</h3>
+          <p>Control, pase, conducción y perfiles. Fundamentos con progresión real de dificultad.</p>
+        </div>
+        <div class="pillar-card reveal reveal-d1">
+          <div class="pillar-index">02</div>
+          <h3>Táctica</h3>
+          <p>Situaciones reales 3v3 y 4v4. El jugador aprende a tomar decisiones bajo presión.</p>
+        </div>
+        <div class="pillar-card reveal reveal-d2">
+          <div class="pillar-index">03</div>
+          <h3>Físico</h3>
+          <p>Calentamiento neuromuscular, coordinación y resistencia adaptada a cada edad.</p>
+        </div>
+        <div class="pillar-card reveal reveal-d3">
+          <div class="pillar-index">04</div>
+          <h3>Disciplina</h3>
+          <p>Formación de persona. El respeto y la actitud no son opcionales en PRODEF.</p>
+        </div>
+      </div>
+
+      <div class="session-structure reveal">
+        <p class="structure-label">Estructura de sesión</p>
+        <div class="timeline">
+          <div class="tl-row">
+            <span class="tl-time">5 min</span>
+            <div class="tl-line"><span class="tl-dot"></span></div>
+            <div class="tl-content">
+              <h4>Recepción y charla táctica</h4>
+              <p>Objetivo de la sesión, asistencia y activación mental.</p>
+            </div>
+          </div>
+          <div class="tl-row">
+            <span class="tl-time">15 min</span>
+            <div class="tl-line"><span class="tl-dot"></span></div>
+            <div class="tl-content">
+              <h4>Calentamiento neuromuscular</h4>
+              <p>Escalera de agilidad, aros, coordinación y movilidad articular.</p>
+            </div>
+          </div>
+          <div class="tl-row">
+            <span class="tl-time">20 min</span>
+            <div class="tl-line"><span class="tl-dot"></span></div>
+            <div class="tl-content">
+              <h4>Desarrollo técnico</h4>
+              <p>Fundamentos en situaciones progresivas y específicas.</p>
+            </div>
+          </div>
+          <div class="tl-row">
+            <span class="tl-time">30 min</span>
+            <div class="tl-line"><span class="tl-dot"></span></div>
+            <div class="tl-content">
+              <h4>Juego reducido — situaciones reales</h4>
+              <p>Decisiones bajo presión. 3v3 y 4v4 con objetivos tácticos claros.</p>
+            </div>
+          </div>
+          <div class="tl-row">
+            <span class="tl-time">20 min</span>
+            <div class="tl-line"><span class="tl-dot tl-dot--last"></span></div>
+            <div class="tl-content">
+              <h4>Partido formativo y cierre</h4>
+              <p>Retroalimentación individual y vuelta a la calma.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       ENTRENADOR
+  ════════════════════════════════════════ -->
+  <div id="entrenador" class="page" role="main">
+    <section class="section">
+
+      <header class="section-header">
+        <p class="section-kicker">Quién dirige</p>
+        <h2 class="section-title">Director Deportivo</h2>
+      </header>
+
+      <div class="coach-layout reveal">
+        <div class="coach-visual">
+          <div class="coach-photo" role="img" aria-label="Xavier García de los Santos"></div>
+          <div class="coach-credentials">
+            <span class="cred-item"><i class="fas fa-certificate"></i> Licencia FMF C y D</span>
+            <span class="cred-item"><i class="fas fa-university"></i> Diplomado Barça Academy</span>
+            <span class="cred-item"><i class="fas fa-futbol"></i> 4ª División Profesional</span>
+          </div>
+        </div>
+
+        <div class="coach-content">
+          <h3 class="coach-name">Xavier García<br>de los Santos</h3>
+          <p class="coach-title">Director Técnico &amp; Fundador, PRODEF</p>
+
+          <blockquote class="coach-quote">
+            "El talento se desarrolla con disciplina, no con suerte."
+          </blockquote>
+
+          <p class="coach-bio">
+            En PRODEF se forma al jugador y a la persona. La disciplina es parte del proceso, no algo separado. Con experiencia en 4ª División Profesional y formación en Ingeniería, Xavier aplica un método estructurado donde el fútbol se analiza con claridad y se enseña con propósito.
+          </p>
+
+          <ul class="values" aria-label="Valores de PRODEF">
+            <li>
+              <i class="fas fa-check-circle"></i>
+              Se respeta al compañero, al entrenador y al rival.
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              El material de entrenamiento se cuida siempre.
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              El error es parte del aprendizaje — la actitud no lo es.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       PRECIOS
+  ════════════════════════════════════════ -->
+  <div id="precios" class="page" role="main">
+    <section class="section">
+
+      <header class="section-header">
+        <p class="section-kicker">Inversión</p>
+        <h2 class="section-title">Inscripción</h2>
+        <p class="section-sub">
+          Desarrollo real requiere inversión real.
+        </p>
+      </header>
+
+      <div class="pricing-stage">
+
+        <!-- Main card -->
+        <div class="pricing-card pricing-card--main reveal">
+          <div class="pricing-card-top">
+            <span class="pricing-badge">Temporada 2026</span>
+            <div class="pricing-prices">
+              <span class="pricing-old" aria-label="Precio regular tachado">$800</span>
+              <span class="pricing-current" aria-label="Precio preferencial">$600</span>
+              <span class="pricing-period">MXN / mes</span>
+            </div>
+            <p class="pricing-condition">
+              <i class="fas fa-graduation-cap"></i>
+              Precio preferencial para jugadores con promedio académico mínimo de 8.5
+            </p>
+          </div>
+
+          <ul class="pricing-list">
+            <li><i class="fas fa-check"></i> Sesiones semanales estructuradas</li>
+            <li><i class="fas fa-check"></i> Material profesional incluido</li>
+            <li><i class="fas fa-check"></i> DT certificado FMF</li>
+            <li><i class="fas fa-check"></i> Evaluación continua del jugador</li>
+            <li><i class="fas fa-check"></i> Acceso al Portal de Padres</li>
+            <li><i class="fas fa-check"></i> Partidos interescuadras</li>
+          </ul>
+
+          <a href="https://wa.me/525653764517" target="_blank" rel="noopener" class="btn btn-primary btn-block">
+            <i class="fab fa-whatsapp"></i> Inscribirme ahora
+          </a>
+        </div>
+
+        <!-- Secondary info -->
+        <div class="pricing-info reveal reveal-d1">
+          <div class="info-block">
+            <p class="info-label">Sedes de entrenamiento</p>
+            <div class="info-sede">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <strong>Canchas Premier San Mateo</strong>
+                <span>Mar. y Jue. — 5:30 PM a 7:30 PM</span>
+              </div>
+            </div>
+            <div class="info-sede">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <strong>Canchas Premier Villas 2</strong>
+                <span>Sáb. — 10:00 AM a 11:45 AM</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-block info-block--note">
+            <i class="fas fa-tshirt"></i>
+            <p>Uniforme oficial próximamente. Por ahora ropa deportiva cómoda y tenis turf.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       GALERÍA
+  ════════════════════════════════════════ -->
+  <div id="galeria" class="page" role="main">
+    <section class="section">
+
+      <header class="section-header">
+        <p class="section-kicker">En cancha</p>
+        <h2 class="section-title">Galería</h2>
+        <p class="section-sub">Momentos reales de entrenamiento en PRODEF.</p>
+      </header>
+
+      <div class="gallery-grid" role="list" aria-label="Galería de fotos">
+        <!-- Reemplazar con: <img src="assets/foto1.jpg" alt="Entrenamiento PRODEF"> -->
+        <div class="gallery-slot" role="listitem"><i class="fas fa-camera"></i></div>
+        <div class="gallery-slot" role="listitem"><i class="fas fa-camera"></i></div>
+        <div class="gallery-slot" role="listitem"><i class="fas fa-camera"></i></div>
+        <div class="gallery-slot" role="listitem"><i class="fas fa-camera"></i></div>
+        <div class="gallery-slot" role="listitem"><i class="fas fa-camera"></i></div>
+        <div class="gallery-slot" role="listitem"><i class="fas fa-camera"></i></div>
+      </div>
+
+    </section>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       UBICACIONES
+  ════════════════════════════════════════ -->
+  <div id="ubicaciones" class="page" role="main">
+    <section class="section">
+
+      <header class="section-header">
+        <p class="section-kicker">Dónde entrenamos</p>
+        <h2 class="section-title">Sedes</h2>
+        <p class="section-sub">
+          Dos instalaciones activas en Ciudad López Mateos, Estado de México.
+        </p>
+      </header>
+
+      <div class="locations-grid">
+
+        <article class="location-card reveal">
+          <div class="location-header">
+            <div class="location-badge">Sede 01</div>
+            <h3>Premier San Mateo</h3>
+            <p class="location-address">
+              Av. Lago de Guadalupe Manzana 005,<br>
+              San Mateo Tecoloapan, C.P. 52920
+            </p>
+          </div>
+
+          <div class="location-schedule">
+            <div class="schedule-row">
+              <i class="fas fa-calendar-alt"></i>
+              <span>Martes y Jueves</span>
+            </div>
+            <div class="schedule-row">
+              <i class="fas fa-clock"></i>
+              <span>5:30 PM — 7:30 PM</span>
+            </div>
+          </div>
+
+          <div class="location-map">
+            <iframe
+              src="https://www.google.com/maps?q=Av+Lago+de+Guadalupe+Manzana+005,+San+Mateo+Tecoloapan,+Cdad.+Lopez+Mateos&output=embed"
+              title="Mapa Canchas Premier San Mateo"
+              loading="lazy"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <a href="https://maps.app.goo.gl/uDQr1hNhqsrijSuQ6"
+             target="_blank" rel="noopener"
+             class="btn btn-outline btn-block">
+            <i class="fas fa-location-arrow"></i> Ver ubicación
+          </a>
+        </article>
+
+        <article class="location-card reveal reveal-d1">
+          <div class="location-header">
+            <div class="location-badge">Sede 02</div>
+            <h3>Premier Villas 2</h3>
+            <p class="location-address">
+              Av. Lago de Guadalupe 460,<br>
+              Ejido San Miguel Chalma, C.P. 52928
+            </p>
+          </div>
+
+          <div class="location-schedule">
+            <div class="schedule-row">
+              <i class="fas fa-calendar-alt"></i>
+              <span>Sábados</span>
+            </div>
+            <div class="schedule-row">
+              <i class="fas fa-clock"></i>
+              <span>10:00 AM — 11:45 AM</span>
+            </div>
+          </div>
+
+          <div class="location-map">
+            <iframe
+              src="https://www.google.com/maps?q=Av+Lago+de+Guadalupe+460,+Ejido+San+Miguel+Chalma,+Cdad.+Lopez+Mateos&output=embed"
+              title="Mapa Canchas Premier Villas 2"
+              loading="lazy"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <a href="https://maps.app.goo.gl/7kcRaZ5vF12ATk4S9"
+             target="_blank" rel="noopener"
+             class="btn btn-outline btn-block">
+            <i class="fas fa-location-arrow"></i> Ver ubicación
+          </a>
+        </article>
+
+      </div>
+
+    </section>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       PORTAL — IDs PRESERVED EXACTLY
+  ════════════════════════════════════════ -->
+  <div id="portal" class="page" role="main">
+    <section class="portal-wrap">
+
+      <!-- ── LOGIN ─────────────────────────── -->
+      <div id="login-box" class="login-shell" aria-label="Inicio de sesión">
+        <div class="login-logo">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h2 class="login-title">Portal PRODEF</h2>
+        <p class="login-sub">Sistema de seguimiento de rendimiento</p>
+
+        <div class="field">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" placeholder="tu@correo.com" autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" placeholder="••••••••" autocomplete="current-password">
+        </div>
+
+        <button class="btn btn-primary btn-block" onclick="login()">
+          Entrar <i class="fas fa-arrow-right"></i>
+        </button>
+
+        <p class="login-error" id="login-error" role="alert" aria-live="polite"></p>
+      </div>
+
+      <!-- ── DASHBOARD ─────────────────────── -->
+      <div id="dashboard" class="dashboard" aria-label="Panel del jugador">
+
+        <!-- Top bar -->
+        <div class="dash-topbar">
+          <div class="dash-identity">
+            <p class="dash-eyebrow">Sistema de Rendimiento · PRODEF</p>
+            <!-- ID preserved: player-name -->
+            <h2 class="dash-player" id="player-name"></h2>
+          </div>
+          <button class="btn-exit" onclick="logout()" aria-label="Cerrar sesión">
+            <i class="fas fa-sign-out-alt"></i> Salir
+          </button>
+        </div>
+
+        <!-- ─ Current evaluation ─ -->
+        <section class="eval-section" aria-label="Evaluación actual">
+          <h3 class="eval-heading">
+            <span class="eval-tag">Evaluación actual</span>
+          </h3>
+
+          <div class="metrics-row">
+            <div class="metric-block">
+              <span class="metric-label">Técnica</span>
+              <!-- ID preserved: player-tecnica -->
+              <span class="metric-value" id="player-tecnica"></span>
+              <span class="metric-scale">/ 10</span>
+            </div>
+            <div class="metric-divider" aria-hidden="true"></div>
+            <div class="metric-block">
+              <span class="metric-label">Táctica</span>
+              <!-- ID preserved: player-tactica -->
+              <span class="metric-value" id="player-tactica"></span>
+              <span class="metric-scale">/ 10</span>
+            </div>
+            <div class="metric-divider" aria-hidden="true"></div>
+            <div class="metric-block">
+              <span class="metric-label">Físico</span>
+              <!-- ID preserved: player-fisico -->
+              <span class="metric-value" id="player-fisico"></span>
+              <span class="metric-scale">/ 10</span>
+            </div>
+          </div>
+
+          <div class="coach-note">
+            <p class="coach-note-label">
+              <i class="fas fa-comment-alt"></i> Nota del entrenador
+            </p>
+            <!-- ID preserved: player-comentario -->
+            <p class="coach-note-text" id="player-comentario"></p>
+          </div>
+        </section>
+
+        <!-- ─ History ─ -->
+        <section class="history-section" aria-label="Historial de evaluaciones">
+          <h3 class="eval-heading">
+            <span class="eval-tag">Historial</span>
+          </h3>
+
+          <div id="history-list" aria-live="polite">
+            <p class="history-empty">Cargando evaluaciones…</p>
+          </div>
+        </section>
+
+      </div><!-- /dashboard -->
+
+    </section>
+  </div>
+
+  <!-- ── FOOTER ─────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <img src="assets/logo.png" alt="PRODEF" loading="lazy" class="footer-logo">
+      <p class="footer-name">Proyecto de Desarrollo Futbolístico</p>
+      <p class="footer-tagline">Formando jugadores que entienden el juego.</p>
+      <nav class="footer-social" aria-label="Redes sociales">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="mailto:contacto@prodef.mx" aria-label="Correo"><i class="fas fa-envelope"></i></a>
+      </nav>
+      <p class="footer-copy">© 2026 PRODEF — Ciudad López Mateos, Estado de México.</p>
+    </div>
+  </footer>
+
+  <!-- ── SCRIPTS ────────────────────────────── -->
+  <script type="module" src="app.js"></script>
+
+  <script>
+    const PAGES = ['inicio','metodologia','entrenador','precios','galeria','ubicaciones','portal'];
+
+    function show(id) {
+      PAGES.forEach(p => {
+        const el = document.getElementById(p);
+        const nb = document.getElementById('nb-' + p);
+        if (el) el.classList.toggle('active', p === id);
+        if (nb) nb.setAttribute('aria-current', p === id ? 'page' : 'false');
+      });
+      document.title = id === 'inicio'
+        ? 'PRODEF | Formación Profesional de Fútbol'
+        : 'PRODEF | ' + (document.getElementById('nb-' + id)?.textContent.trim() || id);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      document.getElementById('nav-links').classList.remove('open');
+      document.getElementById('hamburger').setAttribute('aria-expanded', 'false');
+    }
+
+    function toggleNav() {
+      const links = document.getElementById('nav-links');
+      const btn   = document.getElementById('hamburger');
+      const open  = links.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+      btn.classList.toggle('is-open', open);
+    }
+
+    document.querySelector('.nav-logo').addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') show('inicio');
+    });
+
+// Intersection observer for .reveal elements
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('revealed');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Re-observe when a page becomes active (SPA)
+const origShow = window.show;
+
+window.show = function(id) {
+  origShow(id); // ✅ usar la función original
+
+  setTimeout(() => {
+    document.querySelectorAll('#' + id + ' .reveal:not(.revealed)')
+      .forEach(el => observer.observe(el));
+  }, 50);
+};
+  </script>
+
 </body>
 </html>
