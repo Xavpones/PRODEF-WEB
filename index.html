@@ -337,15 +337,16 @@
         <p class="section-sub">Momentos reales de entrenamiento en PRODEF.</p>
       </header>
 
-      <div class="gallery-grid" role="list" aria-label="Galería de fotos">
-        <!-- Reemplazar con: <img src="assets/foto1.jpg" alt="Entrenamiento PRODEF"> -->
-        <div class="gallery-slot" role="listitem"><i class="fas fa-camera"></i></div>
-        <div class="gallery-slot" role="listitem"><i class="fas fa-camera"></i></div>
-        <div class="gallery-slot" role="listitem"><i class="fas fa-camera"></i></div>
-        <div class="gallery-slot" role="listitem"><i class="fas fa-camera"></i></div>
-        <div class="gallery-slot" role="listitem"><i class="fas fa-camera"></i></div>
-        <div class="gallery-slot" role="listitem"><i class="fas fa-camera"></i></div>
-      </div>
+     <div class="gallery-grid">
+
+  <img src="assets/foto1.jpg" alt="Entrenamiento PRODEF">
+  <img src="assets/foto2.jpg" alt="Sesión PRODEF">
+  <img src="assets/foto3.jpg" alt="Trabajo técnico">
+  <img src="assets/foto4.jpg" alt="Juego reducido">
+  <img src="assets/foto5.jpg" alt="Partido">
+  <img src="assets/foto6.jpg" alt="Equipo">
+
+</div>
 
     </section>
   </div>
@@ -606,10 +607,10 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 // Re-observe when a page becomes active (SPA)
-const origShow = window.show;
+const originalShow = show;
 
 window.show = function(id) {
-  origShow(id); // ✅ usar la función original
+  originalShow(id);
 
   setTimeout(() => {
     document.querySelectorAll('#' + id + ' .reveal:not(.revealed)')
